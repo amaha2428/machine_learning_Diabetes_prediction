@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetise</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin&family=Dancing+Script&family=Open+Sans:wght@300;400&family=Poppins:wght@200;300&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">  
+</head>
+<body>
+    
+    <div class="cover">  
+        <h1>Diabetise Test</h1>
+    <form action="{{ url_for('predict')}}"method="post" class="form">
+
+    <div class="formBackground">
+      <div class="modal">
+        <div class="textfield">
+            <input type="number"  name = "preg"  placeholder="Pregnancies" required>
+        </div> 
+        <div class="textfield">
+            <input type="number" name = "glu"  placeholder="Glucose" required>
+        </div>
+        <div class="textfield">
+            <input type="number" name = "BP"  placeholder="Blood Pressure" required>
+        </div>
+        <div class="textfield">
+            <input type="number" name = "SK"  placeholder="Skin Thinkness" required>
+        </div>
+        <div class="textfield">
+            <input type="number" name = "IL"  placeholder="Insulin Level" required>
+        </div>
+        <div class="textfield">
+            <input type="text" name = "BMI" placeholder="BMI" required>
+        </div>
+        <div class="textfield">
+            <input type="text" name = "DPF" placeholder="Diabetes Pedigree Function" required>
+        </div>
+        <div class="textfield">
+            <input type="number" name = "AGE"  placeholder="Age" required>
+        </div> 
+        <br><br>
+
+        <button type="submit" value="submit" class="submitBtn">Submit</button>
+    </div>  
+     </div>
+    
+  </form>
+    <div class="predict">
+        <h2>
+        {{ prediction_text }}
+        </h2>
+    </div>
+
+</div>
+  
+  
+</body>
+</html>
