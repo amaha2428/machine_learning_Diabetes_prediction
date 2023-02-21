@@ -1,0 +1,16 @@
+{
+    "builds": [
+        {
+          "src": "Dpred.py",
+          "use": "@vercel/python"
+        }
+      ],
+
+      "routes":[
+        {
+            "src":"/(.*)",
+            "dest": "Dpred.py"
+        }
+      ]
+
+}
